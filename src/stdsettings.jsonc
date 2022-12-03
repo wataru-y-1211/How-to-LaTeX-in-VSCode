@@ -1,0 +1,24 @@
+{
+    "editor.wordWrap": "on",
+    "editor.fontSize": 15,
+    "editor.renderWhitespace": "all",
+    "editor.suggestSelection": "recentlyUsedByPrefix",
+    "editor.guides.bracketPairs": true,
+    "editor.bracketPairColorization.enabled": true,
+    "files.autoSave": "afterDelay",  // 自動保存ON
+    "files.autoSaveDelay": 1500,  // 編集の1500ミリ秒後に自動保存
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.dontShowNewVersionMessage": true,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.editor.untitled.hint": "hidden",
+    "files.exclude": {
+        // VSCodeで以下の拡張子のファイルを表示させないようにする
+        "**.aux": true,
+        "**.synctex.gz": true,
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
+        "**/.settings": true
+    },
+    // ここに最初と最後の中括弧を削除したソースコード3を貼り付けてください
+}

@@ -1,0 +1,56 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+                "--cmdx",
+                "-file-line-error",
+                "-interaction=nonstopmode",
+                "-halt-on-error",
+                "-synctex=1",
+                "%DOC%"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        // 自動コンパイルでは一番上のレシピ(ここではlualatex1)が実行されます
+        {
+            "name": "lualatex1",
+            "tools": [
+                "lualatex"
+            ]
+        }
+    ],
+    "editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?　、。「」【】『』（）｛｝《》＜＞！？～てにをはがのともへでや",
+    "latex-workshop.latex.clean.fileTypes": [
+        // "*.aux", // 参照を使うときはコメントアウトする
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc", // 目次を作成する時はコメントアウトする
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        // "*.synctex.gz", // synctexを使うときはコメントアウトする
+        // for Beamer files
+        "_minted*",
+        "*.nav",
+        "*.snm",
+        "*.vrb"
+    ],
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.view.pdf.viewer": "tab"
+}

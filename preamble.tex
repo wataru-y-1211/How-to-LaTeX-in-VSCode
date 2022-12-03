@@ -1,0 +1,58 @@
+\documentclass[11pt,a4paper]{bxjsarticle}
+\usepackage{luatexja}
+\usepackage{etoolbox}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{cancel}
+\mathtoolsset{showonlyrefs=true}
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\captionsetup{compatibility=false}
+\captionsetup[subfigure]{labelformat=simple}
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
+\usepackage{listings,color}
+\definecolor{key}{rgb}{0.37, 0.08, 0.25}
+\definecolor{cmt}{rgb}{0.12,0.38,0.18}
+\definecolor{str}{rgb}{0.06, 0.10, 0.98}
+\lstset{
+    basicstyle=\ttfamily,    % 基本のスタイル
+    keywordstyle=\color{key},    % キーワードのスタイル
+    commentstyle=\color{cmt},    % コメントのスタイル
+    stringstyle=\color{str},    % 文字列のスタイル
+    identifierstyle=\color{black},    % 変数のスタイル
+    rulecolor=\color{black},
+    frame=single,    % フレーム
+    breaklines=true,    % 自動改行
+    breakatwhitespace=false,    % 自動改行の区切り
+    breakindent=12pt,    % 自動改行時のインデント
+    captionpos=t,    % キャプションの位置(t,b,tb)
+    % escapeinside=``,    % LaTeXのエスケープキー
+    numbers=none,    %行番号(none, left, right)
+    firstnumber=1,    % 最初の行番号
+    numbersep=5pt,    % 行番号との距離
+    numberstyle=\scriptsize,    % 行番号のスタイル
+    showspaces=true    % 空白をPDFに出力
+    tabsize=4,    % タブのサイズ
+    columns = fixed,    % 列固定
+    basewidth=0.5em,    % 列の幅
+    lineskip=-0.25em,    % 行間
+    xleftmargin=0.1cm,    % 左余白
+    xrightmargin=0.1cm,    % 右余白
+}
+\renewcommand{\lstlistingname}{ソースコード}
+\usepackage{comment}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{xurl}
+\hypersetup{unicode,bookmarksnumbered=true,final}
+
