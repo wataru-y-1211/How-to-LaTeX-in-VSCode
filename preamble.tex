@@ -1,4 +1,7 @@
-\documentclass[11pt,a4paper]{bxjsarticle}
+\documentclass[lualatex,11pt,ja=standard,a4paper]{bxjsarticle}
+\usepackage{silence}
+\WarningFilter{caption}{Unknown document}
+% \WarningFileter{caption}{Unused}
 \usepackage{luatexja}
 \usepackage{etoolbox}
 \usepackage{graphicx}
@@ -16,8 +19,8 @@
 \mathtoolsset{showonlyrefs=true}
 \usepackage[hang,small,bf]{caption}
 \usepackage[subrefformat=parens]{subcaption}
-\captionsetup{compatibility=false}
-\captionsetup[subfigure]{labelformat=simple}
+\captionsetup*{compatibility=false}
+\captionsetup*[subfigure]{labelformat=simple}
 \renewcommand{\thesubfigure}{(\alph{subfigure})}
 \usepackage{listings,color}
 \definecolor{key}{rgb}{0.37, 0.08, 0.25}

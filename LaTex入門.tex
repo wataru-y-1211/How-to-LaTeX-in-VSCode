@@ -13,7 +13,9 @@
 
 また、あらかじめファイル管理システム(Windowsの場合はエクスプローラー)の設定をファイル名拡張子を表示するように変更しておくと良いです。もし「ファイル」、「フォルダ」、「ディレクトリ」、「拡張子」という単語になじみがない場合は調べて理解しておきましょう。
 
-なお、OSはWindows10を想定しています。他のバージョンのWindowsだと表示が少し違うようですが、やることは余り変わりません。友人によるとWindows11でも問題なくできたそうです。macOS、Linuxなどの場合は大きく異なる点が出てくるので十分注意してください。
+GitHubのsrcフォルダにコードやプリアンブルが載っています。コードなどはここからコピーしてください。
+
+OSはWindows10、11を想定しています。macOS、Linuxなどの場合は大きく異なるようなので、他の方の資料を見たほうが良いかもしれません。
 
 最後に、これはあくまで私のための備忘録なので、これを参考にして何か問題が起こっても全て自己責任でお願いします。
 
@@ -22,6 +24,8 @@
 まずは\TeX Liveをパソコンにインストールします。\TeX Liveとは、簡単に言うと\LaTeX を動かすためのプログラムとかを全部まとめたものです。詳しくは \url{https://texwiki.texjp.org/?TeX%20Live} を参照してください。
 
 Windowsの場合は\url{https://texwiki.texjp.org/?TeX%20Live%2FWindows}からインストーラをダウンロードできます。基本的にはネットワークインストーラを用いる方法で良いと思います。他のOSの場合は対応するページを見てください。
+
+ネットワークインストーラを用いる場合は、サイトに書かれているように Installing TeX Live over the Internet を開き、上のほうにある install-tl-windows.exe などをダウンロードして実行してください。その際、管理者権限で実行するとどのユーザーでも\LaTeX を利用できるようになります。
 
 この\TeX Live、容量が3.4GB程と非常に重たいです。パソコンの空き容量は10GB以上あった方が安心です。また、インストールに1、2時間かかるので、通信環境の良い場所で時間がある時にやりましょう。
 
@@ -69,10 +73,8 @@ Windowsの場合、タスクバーの検索ボックスに「システム環境�
 \documentclass{article}
 \begin{document}
 \begin{quote}
-    \begin{verbatim*}
-        Hello \LaTeX !\\
-        こんにちは \LaTeX !
-    \end{verbatim*}
+    Hello \LaTeX !\\
+    こんにちは \LaTeX !
 \end{quote}
 \end{document}
 \end{lstlisting}
@@ -224,10 +226,10 @@ settings.jsonにソースコード\ref{code:stdjson}を貼り付けた場合、V
 
 \section{\LaTeX の執筆}
 \subsection{プリアンブルについて}
-書けたら書く
+書けたら書く(GitHubにコードあり)
 
 \subsection{スニペットの活用}
-書けたら書く
+書けたら書く(GitHubにコードあり)
 
 \subsection{Gitの活用}
 書けたら書く
@@ -252,7 +254,7 @@ VSCodeを再起動したいなら「reload」と入力しましょう。図\ref{
 \end{figure}
 
 \subsection{拡張機能について}
-背景画像を設定したければ、「background\footnote{\url{https://marketplace.visualstudio.com/items?itemName=shalldie.background}}」か「background-cover\footnote{\url{https://marketplace.visualstudio.com/items?itemName=manasxx.background-cover}}」が良いです。私は「background-cover」を入れています。ただ、どちらを入れてもたまにエラーが出るようになります。特に害はなさそうですが、結構邪魔です。「Fix VSCode Checksums\footnote{\url{https://marketplace.visualstudio.com/items?itemName=lehni.vscode-fix-checksums}}」を入れるとそのエラーを無視することができます(果たしてそれで良いのかは微妙)。
+背景画像を設定したければ、「background\footnote{\url{https://marketplace.visualstudio.com/items?itemName=shalldie.background}}」か「background-cover\footnote{\url{https://marketplace.visualstudio.com/items?itemName=manasxx.background-cover}}」が良いです。私は「background-cover」を入れています。ただ、どちらを入れてもたまにエラーが出るようになります。特に害はなさそうですが、結構邪魔です。「Fix VSCode Checksums\footnote{\url{https://marketplace.visualstudio.com/items?itemName=lehni.vscode-fix-checksums}}」を入れるとそのエラーを無視することができます(それで良いのかは微妙)。
 
 \section{おまけのおまけ}
 WSL上で動かすとめちゃくちゃ速いらしいです。いつか挑戦してみたいのですが、Linuxが分からないので今の所見送っています。

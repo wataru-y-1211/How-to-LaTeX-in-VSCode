@@ -1,208 +1,199 @@
 {
-    "Template for LuaLaTex": {
-        "prefix": [
-            "lualatex",
-            "template",
-            "document"
-        ],
-        "body": [
-            // 基本パッケージ
-            // titlepageを消すと表紙がなくなる
-            "\\documentclass[11pt,a4paper,titlepage]{bxjsarticle}",
-            "\\usepackage{luatexja}",
-            "\\usepackage{etoolbox}",
-            "\\usepackage{graphicx}",
-            "\\usepackage{grffile}",
-            "\\usepackage[table]{xcolor}",
-            "\\usepackage{tikz}",
-            "\\usepackage{textcomp}",
-            // 数式系パッケージ
-            "\\usepackage{amsmath}",
-            "\\usepackage{amsthm}",
-            "\\usepackage{amssymb}",
-            "\\usepackage{mathtools}",
-            "\\usepackage{bm}",
-            "\\usepackage{physics}",
-            "\\usepackage{cancel}",
-            "\\usepackage{ulem}",
-            "\\mathtoolsset{showonlyrefs=true}",
-            // caption、subcaption設定
-            "\\usepackage[hang,small,bf]{caption}",
-            "\\usepackage[subrefformat=parens]{subcaption}",
-            "\\captionsetup{compatibility=false}",
-            // subcaptionをrefした時に図1(a)のように括弧が付くようにする(ただし使わないと警告が出て少し邪魔)
-            "\\captionsetup[subfigure]{labelformat=simple}",
-            "\\renewcommand{\\thesubfigure}{(\\alph{subfigure})}",
-            // ソースコード
-            "\\usepackage{listings,color}",
-            "\\definecolor{key}{rgb}{0.37, 0.08, 0.25}",
-            "\\definecolor{cmt}{rgb}{0.12,0.38,0.18}",
-            "\\definecolor{str}{rgb}{0.06, 0.10, 0.98}",
-            "\\lstset{",
-            "\tbasicstyle=\\ttfamily,    % 基本のスタイル",
-            "\tkeywordstyle=\\color{key},    % キーワードのスタイル",
-            "\tcommentstyle=\\color{cmt},    % コメントのスタイル",
-            "\tstringstyle=\\color{str},    % 文字列のスタイル",
-            "\tidentifierstyle=\\color{black},    % 変数のスタイル",
-            "\trulecolor=\\color{black},",
-            "\tframe=single,    % フレーム",
-            "\tbreaklines=true,    % 自動改行",
-            "\tbreakatwhitespace=false,    % 自動改行の区切り",
-            "\tbreakindent=12pt,    % 自動改行時のインデント",
-            "\tcaptionpos=t,    % キャプションの位置(t,b,tb)",
-            "\t% escapeinside=``,    % LaTeXのエスケープキー",
-            "\tnumbers=left,    %行番号(none, left, right)",
-            "\tfirstnumber=1,    % 最初の行番号",
-            "\tnumbersep=5pt,    % 行番号との距離",
-            "\tnumberstyle=\\scriptsize,    % 行番号のスタイル",
-            "\tshowspaces=true    % 空白をPDFに出力",
-            "\ttabsize=4,    % タブのサイズ",
-            "\tcolumns = fixed,    % 列固定",
-            "\tbasewidth=0.5em,    % 列の幅",
-            "\tlineskip=-0.25em,    % 行間",
-            "\txleftmargin=0.3cm,    % 左余白",
-            "\txrightmargin=0.1cm,    % 右余白",
-            "\t% literate={\\{}{{\\{\\allowbreak}}{1}{(}{{(\\allowbreak}}{1}    % '{'と'('で改行を許す",
-            "}",
-            "\\renewcommand{\\lstlistingname}{ソースコード}",
-            "% listings中で単語の切れ目以外の場所でも自動改行させる(以下3行)",
-            "% \\makeatletter",
-            "% \\def\\lst@lettertrue{\\let\\lst@ifletter\\iffalse}",
-            "% \\def\\lst@digittrue{\\let\\lst@ifletter\\iffalse}",
-            "% \\makeatother",
-            //定理など
-            "\\newtheoremstyle{mythmstyle1}{}{}{\\normalfont}{}{\\bfseries\\sffamily}{}{ }{\\thmname{#1}\\thmnumber{#2}\\thmnote{\\,(#3)\\\\\\\\}}",
-            "\\theoremstyle{mythmstyle1}",
-            "\\newtheorem{definition}{定義}[section]",
-            "\\newtheorem{theorem}[definition]{定理}",
-            "\\newtheorem{axiom}[definition]{公理}",
-            "\\newtheorem{corollary}[definition]{系}",
-            "\\newtheorem{proposition}[definition]{命題}",
-            "\\newtheorem{lemma}[definition]{補題}",
-            "\\newtheorem{ex}[definition]{例題}",
-            "\\newtheorem{remark}[definition]{注意}",
-            "\\newtheorem{eg}[definition]{例}",
-            // その他、最後にロードするもの
-            "\\usepackage{comment}",
-            "\\usepackage{float}",
-            "\\usepackage{hyperref}",
-            "\\usepackage{bookmark}",
-            "\\usepackage{xurl}",
-            // hidelinksを消すとリンクに色がつく
-            "\\hypersetup{unicode,bookmarksnumbered=true,hidelinks,final}",
-            "",
-            "\\title{$1}",
-            "\\author{$2}",
-            "\\date{\\today}",
-            "",
-            "\\begin{document}",
-            "\\maketitle",
-            "",
-            "\\section{}",
-            "$0",
-            "\\end{document}"
-        ]
-    },
-    "Preamble for LuaLaTeX": {
-        "prefix": "preamble",
-        "body": [
-            // 基本パッケージ
-            "\\documentclass[11pt,a4paper,titlepage]{bxjsarticle}",
-            "\\usepackage{luatexja}",
-            "\\usepackage{etoolbox}",
-            "\\usepackage{graphicx}",
-            "\\usepackage{grffile}",
-            "\\usepackage[table]{xcolor}",
-            "\\usepackage{tikz}",
-            "\\usepackage{textcomp}",
-            // 数式系パッケージ
-            "\\usepackage{amsmath}",
-            "\\usepackage{amsthm}",
-            "\\usepackage{amssymb}",
-            "\\usepackage{mathtools}",
-            "\\usepackage{bm}",
-            "\\usepackage{physics}",
-            "\\usepackage{cancel}",
-            "\\mathtoolsset{showonlyrefs=true}",
-            // caption、subcaption設定
-            "\\usepackage[hang,small,bf]{caption}",
-            "\\usepackage[subrefformat=parens]{subcaption}",
-            "\\captionsetup{compatibility=false}",
-            // subcaptionをrefした時に図1(a)のように括弧が付くようにする
-            "\\captionsetup[subfigure]{labelformat=simple}",
-            "\\renewcommand{\\thesubfigure}{(\\alph{subfigure})}",
-            // ソースコード
-            "\\usepackage{listings,color}",
-            "\\definecolor{key}{rgb}{0.37, 0.08, 0.25}",
-            "\\definecolor{cmt}{rgb}{0.12,0.38,0.18}",
-            "\\definecolor{str}{rgb}{0.06, 0.10, 0.98}",
-            "\\lstset{",
-            "\tbasicstyle=\\ttfamily,    % 基本のスタイル",
-            "\tkeywordstyle=\\color{key},    % キーワードのスタイル",
-            "\tcommentstyle=\\color{cmt},    % コメントのスタイル",
-            "\tstringstyle=\\color{str},    % 文字列のスタイル",
-            "\tidentifierstyle=\\color{black},    % 変数のスタイル",
-            "\trulecolor=\\color{black},",
-            "\tframe=single,    % フレーム",
-            "\tbreaklines=true,    % 自動改行",
-            "\tbreakatwhitespace=false,    % 自動改行の区切り",
-            "\tbreakindent=12pt,    % 自動改行時のインデント",
-            "\tcaptionpos=t,    % キャプションの位置(t,b,tb)",
-            "\t% escapeinside=``,    % LaTeXのエスケープキー",
-            "\tnumbers=left,    %行番号(none, left, right)",
-            "\tfirstnumber=1,    % 最初の行番号",
-            "\tnumbersep=5pt,    % 行番号との距離",
-            "\tnumberstyle=\\scriptsize,    % 行番号のスタイル",
-            "\tshowspaces=true    % 空白をPDFに出力",
-            "\ttabsize=4,    % タブのサイズ",
-            "\tcolumns = fixed,    % 列固定",
-            "\tbasewidth=0.5em,    % 列の幅",
-            "\tlineskip=-0.25em,    % 行間",
-            "\txleftmargin=0.3cm,    % 左余白",
-            "\txrightmargin=0.1cm,    % 右余白",
-            "\t% literate={\\{}{{\\{\\allowbreak}}{1}{(}{{(\\allowbreak}}{1}    % '{'と'('で改行を許す",
-            "}",
-            "\\renewcommand{\\lstlistingname}{ソースコード}",
-            "% listings中で単語の切れ目以外の場所でも自動改行させる(以下3行)",
-            "% \\makeatletter",
-            "% \\def\\lst@lettertrue{\\let\\lst@ifletter\\iffalse}",
-            "% \\def\\lst@digittrue{\\let\\lst@ifletter\\iffalse}",
-            "% \\makeatother",
-            // その他、最後にロードするもの
-            "\\usepackage{comment}",
-            "\\usepackage{float}",
-            "\\usepackage{hyperref}",
-            "\\usepackage{bookmark}",
-            "\\usepackage{xurl}",
-            // hidelinksを消すとリンクに色がつく
-            "\\hypersetup{unicode,bookmarksnumbered=true,hidelinks,final}"
-        ]
-    },
-    "Body": {
-        "prefix": [
-            "body",
-            "main"
-        ],
-        "body": [
-            "\\title{$1}",
-            "\\author{$2}",
-            "\\date{\\today}",
-            "",
-            "\\begin{document}",
-            "\\maketitle",
-            "",
-            "\\section{$3}",
-            "$0",
-            "\\end{document}"
-        ]
-    },
-    "Comment": {
+	"Template for LuaLaTex": {
+		"prefix": [
+			"lualatex",
+			"template",
+			"document"
+		],
+		"body": [
+			// 基本パッケージ
+			"\\documentclass[lualatex,11pt,ja=standard,a4paper,titlepage]{bxjsarticle}",
+			"\\usepackage{silence}",
+			"\\WarningFilter{caption}{Unused}",
+			"\\usepackage{luatexja}",
+			"\\usepackage{etoolbox}",
+			"\\usepackage{graphicx}",
+			"\\usepackage{grffile}",
+			"\\usepackage[table]{xcolor}",
+			"\\usepackage{tikz}",
+			"\\usepackage{textcomp}",
+			// 数式系パッケージ
+			"\\usepackage{amsmath}",
+			"\\usepackage{amsthm}",
+			"\\usepackage{amssymb}",
+			"\\usepackage{mathtools}",
+			"\\usepackage{bm}",
+			"\\usepackage{physics}",
+			"\\usepackage{cancel}",
+			"\\mathtoolsset{showonlyrefs=true}",
+			// caption、subcaption設定
+			"\\usepackage[hang,small,bf]{caption}",
+			"\\usepackage[subrefformat=parens]{subcaption}",
+			// '*'をつけることによりWarningが消える
+			"\\captionsetup*{compatibility=false}",
+			// subcaptionをrefした時に図1(a)のように括弧が付くようにする
+			"\\captionsetup*[subfigure]{labelformat=simple}",
+			"\\renewcommand{\\thesubfigure}{(\\alph{subfigure})}",
+			// ソースコード
+			"\\usepackage{listings,color}",
+			"\\definecolor{key}{rgb}{0.37, 0.08, 0.25}",
+			"\\definecolor{cmt}{rgb}{0.12,0.38,0.18}",
+			"\\definecolor{str}{rgb}{0.06, 0.10, 0.98}",
+			"\\lstset{",
+			"\tbasicstyle=\\ttfamily,    % 基本のスタイル",
+			"\tkeywordstyle=\\color{key},    % キーワードのスタイル",
+			"\tcommentstyle=\\color{cmt},    % コメントのスタイル",
+			"\tstringstyle=\\color{str},    % 文字列のスタイル",
+			"\tidentifierstyle=\\color{black},    % 変数のスタイル",
+			"\trulecolor=\\color{black},",
+			"\tframe=single,    % フレーム",
+			"\tbreaklines=true,    % 自動改行",
+			"\tbreakatwhitespace=false,    % 自動改行の区切り",
+			"\tbreakindent=12pt,    % 自動改行時のインデント",
+			"\tcaptionpos=t,    % キャプションの位置(t,b,tb)",
+			"\t% escapeinside=``,    % LaTeXのエスケープキー",
+			"\tnumbers=left,    %行番号(none, left, right)",
+			"\tfirstnumber=1,    % 最初の行番号",
+			"\tnumbersep=5pt,    % 行番号との距離",
+			"\tnumberstyle=\\scriptsize,    % 行番号のスタイル",
+			"\tshowspaces=true    % 空白をPDFに出力",
+			"\ttabsize=4,    % タブのサイズ",
+			"\tcolumns = fixed,    % 列固定",
+			"\tbasewidth=0.5em,    % 列の幅",
+			"\tlineskip=-0.25em,    % 行間",
+			"\txleftmargin=0.3cm,    % 左余白",
+			"\txrightmargin=0.1cm,    % 右余白",
+			"\t% literate={\\{}{{\\{\\allowbreak}}{1}{(}{{(\\allowbreak}}{1}    % '{'と'('で改行を許す",
+			"}",
+			"\\renewcommand{\\lstlistingname}{ソースコード}",
+			"% listings中で単語の切れ目以外の場所でも自動改行させる(以下3行)",
+			"% \\makeatletter",
+			"% \\def\\lst@lettertrue{\\let\\lst@ifletter\\iffalse}",
+			"% \\def\\lst@digittrue{\\let\\lst@ifletter\\iffalse}",
+			"% \\makeatother",
+			// その他、最後にロードするもの
+			"\\usepackage{comment}",
+			"\\usepackage{float}",
+			"\\usepackage{hyperref}",
+			"\\usepackage{bookmark}",
+			"\\usepackage{xurl}",
+			// hidelinksを消すとリンクに色がつく
+			"\\hypersetup{unicode,bookmarksnumbered=true,hidelinks,final}",
+			"",
+			"\\title{$1}",
+			"\\author{$2}",
+			"\\date{\\today}",
+			"",
+			"\\begin{document}",
+			"\\maketitle",
+			"",
+			"\\section{}",
+			"$0",
+			"\\end{document}"
+		]
+	},
+	"Preamble for LuaLaTeX": {
+		"prefix": "preamble",
+		"body": [
+			// 基本パッケージ
+			"\\documentclass[lualatex,11pt,ja=standard,a4paper,titlepage]{bxjsarticle}",
+			"\\usepackage{silence}",
+			"\\WarningFilter{caption}{Unused}",
+			"\\usepackage{luatexja}",
+			"\\usepackage{etoolbox}",
+			"\\usepackage{graphicx}",
+			"\\usepackage{grffile}",
+			"\\usepackage[table]{xcolor}",
+			"\\usepackage{tikz}",
+			"\\usepackage{textcomp}",
+			// 数式系パッケージ
+			"\\usepackage{amsmath}",
+			"\\usepackage{amsthm}",
+			"\\usepackage{amssymb}",
+			"\\usepackage{mathtools}",
+			"\\usepackage{bm}",
+			"\\usepackage{physics}",
+			"\\usepackage{cancel}",
+			"\\mathtoolsset{showonlyrefs=true}",
+			// caption、subcaption設定
+			"\\usepackage[hang,small,bf]{caption}",
+			"\\usepackage[subrefformat=parens]{subcaption}",
+			"\\captionsetup*{compatibility=false}",
+			// subcaptionをrefした時に図1(a)のように括弧が付くようにする
+			"\\captionsetup*[subfigure]{labelformat=simple}",
+			"\\renewcommand{\\thesubfigure}{(\\alph{subfigure})}",
+			// ソースコード
+			"\\usepackage{listings,color}",
+			"\\definecolor{key}{rgb}{0.37, 0.08, 0.25}",
+			"\\definecolor{cmt}{rgb}{0.12,0.38,0.18}",
+			"\\definecolor{str}{rgb}{0.06, 0.10, 0.98}",
+			"\\lstset{",
+			"\tbasicstyle=\\ttfamily,    % 基本のスタイル",
+			"\tkeywordstyle=\\color{key},    % キーワードのスタイル",
+			"\tcommentstyle=\\color{cmt},    % コメントのスタイル",
+			"\tstringstyle=\\color{str},    % 文字列のスタイル",
+			"\tidentifierstyle=\\color{black},    % 変数のスタイル",
+			"\trulecolor=\\color{black},",
+			"\tframe=single,    % フレーム",
+			"\tbreaklines=true,    % 自動改行",
+			"\tbreakatwhitespace=false,    % 自動改行の区切り",
+			"\tbreakindent=12pt,    % 自動改行時のインデント",
+			"\tcaptionpos=t,    % キャプションの位置(t,b,tb)",
+			"\t% escapeinside=``,    % LaTeXのエスケープキー",
+			"\tnumbers=left,    %行番号(none, left, right)",
+			"\tfirstnumber=1,    % 最初の行番号",
+			"\tnumbersep=5pt,    % 行番号との距離",
+			"\tnumberstyle=\\scriptsize,    % 行番号のスタイル",
+			"\tshowspaces=true    % 空白をPDFに出力",
+			"\ttabsize=4,    % タブのサイズ",
+			"\tcolumns = fixed,    % 列固定",
+			"\tbasewidth=0.5em,    % 列の幅",
+			"\tlineskip=-0.25em,    % 行間",
+			"\txleftmargin=0.3cm,    % 左余白",
+			"\txrightmargin=0.1cm,    % 右余白",
+			"\t% literate={\\{}{{\\{\\allowbreak}}{1}{(}{{(\\allowbreak}}{1}    % '{'と'('で改行を許す",
+			"}",
+			"\\renewcommand{\\lstlistingname}{ソースコード}",
+			"% listings中で単語の切れ目以外の場所でも自動改行させる(以下3行)",
+			"% \\makeatletter",
+			"% \\def\\lst@lettertrue{\\let\\lst@ifletter\\iffalse}",
+			"% \\def\\lst@digittrue{\\let\\lst@ifletter\\iffalse}",
+			"% \\makeatother",
+			// その他、最後にロードするもの
+			"\\usepackage{comment}",
+			"\\usepackage{float}",
+			"\\usepackage{hyperref}",
+			"\\usepackage{bookmark}",
+			"\\usepackage{xurl}",
+			// hidelinksを消すとリンクに色がつく
+			"\\hypersetup{unicode,bookmarksnumbered=true,hidelinks,final}",
+		]
+	},
+	"Body": {
+		"prefix": [
+			"body",
+			"main"
+		],
+		"body": [
+			"\\title{$1}",
+			"\\author{$2}",
+			"\\date{\\today}",
+			"",
+			"\\begin{document}",
+			"\\maketitle",
+			"",
+			"\\section{$3}",
+			"$0",
+			"\\end{document}"
+		]
+	},
+	"Comment": {
 		"prefix": "cmt",
 		"body": [
 			"\\begin{comment}",
 			"$1",
 			"\\end{comment}",
-			"$0"
+			"$0",
 		],
 		"description": ""
 	},
@@ -218,7 +209,7 @@
 			"\t\\caption{$2}",
 			"\t\\label{fig:$3}",
 			"\\end{figure}",
-			"$0"
+			"$0",
 		],
 		"description": "Insert graphics"
 	},
@@ -241,7 +232,7 @@
 			"\t\t\\label{fig:$6}",
 			"\t\\end{minipage}",
 			"\\end{figure}",
-			"$0"
+			"$0",
 		]
 	},
 	"Insert 2 Subfigures": {
@@ -265,7 +256,7 @@
 			"\t\\caption{$7}",
 			"\t\\label{fig:$8}",
 			"\\end{figure}",
-			"$0"
+			"$0",
 		]
 	},
 	"Insert 3 Figures": {
@@ -294,7 +285,7 @@
 			"\t\t\\label{fig:$9}",
 			"\t\\end{minipage}",
 			"\\end{figure}",
-			"$0"
+			"$0",
 		]
 	},
 	"Insert 3 Subfigures": {
@@ -325,7 +316,7 @@
 			"\t\\caption{$10}",
 			"\t\\label{fig:$11}",
 			"\\end{figure}",
-			"$0"
+			"$0",
 		]
 	},
 	"Insert Table": {
@@ -341,7 +332,7 @@
 			"\t\t\\hline",
 			"\t\\end{tabular}",
 			"\\end{table}",
-			"$0"
+			"$0",
 		],
 		"description": "Insert table"
 	},
@@ -360,7 +351,7 @@
 			"\t\t\\hline",
 			"\t\\end{tabular}",
 			"\\end{table}",
-			"$0"
+			"$0",
 		]
 	},
 	"Insert Table 22 with Header": {
@@ -380,7 +371,7 @@
 			"\t\t\\hline",
 			"\t\\end{tabular}",
 			"\\end{table}",
-			"$0"
+			"$0",
 		]
 	},
 	"Link": {
@@ -390,7 +381,7 @@
 		],
 		"body": [
 			"\\url{${1:https://}}",
-			"$0"
+			"$0",
 		]
 	},
 	"Math": {
@@ -399,7 +390,7 @@
 			"\\begin{${1|equation,align,gather|}}",
 			"\t$2 \\label{eq:$3}",
 			"\\end{$1}",
-			"$0"
+			"$0",
 		]
 	},
 	"InnerMath": {
@@ -408,7 +399,7 @@
 			"\\begin{${1|split,aligned,gathered|}}",
 			"\t$2 \\label{eq:$3}",
 			"\\end{$1}",
-			"$0"
+			"$0",
 		]
 	},
 	"MathCase": {
@@ -417,14 +408,14 @@
 			"\\begin{cases}",
 			"\t${1:eq} & (${2:case})",
 			"\\end{cases}",
-			"$0"
+			"$0",
 		]
 	},
 	"Refer": {
 		"prefix": "ref",
 		"body": [
 			"${1|\\ref,\\eqref|}",
-			"$0"
+			"$0",
 		]
 	},
 	"Code": {
@@ -436,7 +427,7 @@
 			"\\begin{lstlisting}[language=${1|{[Objective]Caml},C,C++,Java,Python,{[LaTeX]TeX},Verilog,{[Sharp]C}|}, caption=$2, label=code:$2]",
 			"$3",
 			"\\end{lstlisting}",
-			"$0"
+			"$0",
 		]
 	},
 	"CodeInput": {
@@ -446,7 +437,7 @@
 		],
 		"body": [
 			"\\lstinputlisting[language=${2|C,C++,Java,Python,{[LaTex]TeX},{[Sharp]C},Verilog|}, caption=$3, label=code:$3]$1",
-			"$0"
+			"$0",
 		]
 	},
 	"MathInline": {
